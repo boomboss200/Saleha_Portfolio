@@ -1,23 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dr. Saleha Khadim | Pure Aesthetic Clinic</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --charcoal: #1c1c1c;
@@ -29,9 +20,7 @@
       --white: #ffffff;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Inter', sans-serif;
@@ -43,540 +32,289 @@
 
     /* ── NAV ─────────────────────────────────────────── */
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      position: sticky; top: 0; z-index: 100;
       background: var(--white);
       border-bottom: 1px solid var(--light-line);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      display: flex; align-items: center; justify-content: space-between;
       padding: 0 5%;
       height: 68px;
+      flex-wrap: wrap;
     }
-
+    .nav-top-row {
+      display: contents; /* invisible wrapper on desktop — children appear as direct flex items */
+    }
     .nav-logo {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      color: var(--charcoal);
-      text-transform: uppercase;
-      text-decoration: none;
+      font-size: 1.4rem; font-weight: 600; letter-spacing: 0.12em;
+      color: var(--charcoal); text-transform: uppercase; text-decoration: none;
     }
-
-    .nav-logo span {
-      color: var(--rose-gold);
-    }
-
-    .nav-tabs {
-      display: flex;
-      gap: 4px;
-    }
-
+    .nav-logo span { color: var(--rose-gold); }
+    .nav-tabs { display: flex; gap: 4px; }
     .nav-tab {
       padding: 8px 20px;
       font-family: 'Inter', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      border: none;
-      background: none;
-      cursor: pointer;
+      font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--muted);
+      border: none; background: none; cursor: pointer;
       border-bottom: 2px solid transparent;
       transition: color 0.2s, border-color 0.2s;
       text-decoration: none;
     }
-
-    .nav-tab:hover,
-    .nav-tab.active {
+    .nav-tab:hover, .nav-tab.active {
       color: var(--charcoal);
       border-bottom-color: var(--rose-gold);
     }
-
     .nav-cta {
-      background: var(--charcoal);
-      color: var(--cream);
-      padding: 9px 22px;
-      border-radius: 2px;
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
+      background: var(--charcoal); color: var(--cream);
+      padding: 9px 22px; border-radius: 2px;
+      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
       transition: background 0.2s;
     }
-
-    .nav-cta:hover {
-      background: var(--rose-gold);
-    }
+    .nav-cta:hover { background: var(--rose-gold); }
 
     /* ── PAGES ───────────────────────────────────────── */
-    .page {
-      display: none;
-    }
-
-    .page.active {
-      display: block;
-    }
+    .page { display: none; }
+    .page.active { display: block; }
 
     /* ── SHARED ──────────────────────────────────────── */
-    .section {
-      padding: 80px 5%;
-    }
-
+    .section { padding: 80px 5%; }
     .section-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--rose-gold);
-      font-weight: 500;
-      margin-bottom: 12px;
+      font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--rose-gold); font-weight: 500; margin-bottom: 12px;
     }
-
     .section-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 400;
-      line-height: 1.2;
-      color: var(--charcoal);
-      margin-bottom: 20px;
+      font-weight: 400; line-height: 1.2;
+      color: var(--charcoal); margin-bottom: 20px;
     }
-
-    .section-title em {
-      font-style: italic;
-      color: var(--rose-gold);
-    }
-
+    .section-title em { font-style: italic; color: var(--rose-gold); }
     .divider {
-      width: 48px;
-      height: 1px;
-      background: var(--rose-gold);
-      margin-bottom: 28px;
+      width: 48px; height: 1px; background: var(--rose-gold); margin-bottom: 28px;
     }
-
     .lead {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 620px;
-      line-height: 1.8;
+      font-size: 1.05rem; color: var(--muted); max-width: 620px; line-height: 1.8;
     }
-
     .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: center;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
     }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
-
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
     @media (max-width: 768px) {
-
-      .grid-2,
-      .grid-3 {
-        grid-template-columns: 1fr;
-      }
-
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
       nav {
         padding: 0 4%;
+        height: auto;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
       }
-
+      .nav-top-row {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 14px 0;
+      }
       .nav-tabs {
-        display: none;
+        display: flex;
+        background: var(--cream);
+        border-top: 1px solid var(--light-line);
+        padding: 10px 0;
+        gap: 8px;
+      }
+      .nav-tab {
+        flex: 1; text-align: center;
+        padding: 9px 6px;
+        font-size: 0.68rem;
+        background: var(--blush);
+        border-radius: 30px;
+        border-bottom: none !important;
+        color: var(--muted);
+      }
+      .nav-tab.active, .nav-tab:hover {
+        background: var(--charcoal);
+        color: var(--cream);
+        border-bottom: none !important;
+      }
+      .nav-cta {
+        font-size: 0.68rem;
+        padding: 7px 14px;
+        white-space: nowrap;
       }
     }
 
     /* ── DR PAGE — HERO ──────────────────────────────── */
     .dr-hero {
       background: var(--charcoal);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 88vh;
+      display: grid; grid-template-columns: 1fr 1fr; min-height: 88vh;
     }
-
     .dr-hero-image {
-      position: relative;
-      overflow: hidden;
+      position: relative; overflow: hidden;
     }
-
     .dr-hero-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
+      width: 100%; height: 100%; object-fit: cover; object-position: center top;
       filter: grayscale(8%) contrast(1.04);
     }
-
     .dr-hero-image::after {
-      content: '';
-      position: absolute;
-      inset: 0;
+      content: ''; position: absolute; inset: 0;
       background: linear-gradient(to right, transparent 60%, var(--charcoal));
     }
-
     .dr-hero-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      display: flex; flex-direction: column; justify-content: center;
       padding: 80px 7% 80px 5%;
       color: var(--cream);
     }
-
     .dr-hero-eyebrow {
-      font-size: 0.68rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--rose-gold);
-      margin-bottom: 20px;
-      font-weight: 500;
+      font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--rose-gold); margin-bottom: 20px; font-weight: 500;
     }
-
     .dr-hero-name {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2.4rem, 4.5vw, 3.8rem);
-      font-weight: 300;
-      line-height: 1.1;
-      margin-bottom: 16px;
+      font-weight: 300; line-height: 1.1; margin-bottom: 16px;
     }
-
-    .dr-hero-name strong {
-      font-weight: 600;
-    }
-
+    .dr-hero-name strong { font-weight: 600; }
     .dr-hero-title {
-      font-size: 0.88rem;
-      letter-spacing: 0.08em;
-      color: rgba(255, 255, 255, 0.55);
-      margin-bottom: 36px;
-      line-height: 1.8;
+      font-size: 0.88rem; letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.55); margin-bottom: 36px; line-height: 1.8;
     }
-
     .hero-stats {
-      display: flex;
-      gap: 36px;
-      margin-bottom: 44px;
-      padding-bottom: 36px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex; gap: 36px; margin-bottom: 44px;
+      padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,0.1);
     }
-
     .hero-stat-num {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2.2rem;
-      font-weight: 500;
-      color: var(--rose-gold);
-      display: block;
+      font-size: 2.2rem; font-weight: 500; color: var(--rose-gold); display: block;
     }
-
     .hero-stat-label {
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.45);
+      font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
     }
-
-    .hero-btns {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
     .btn-primary {
-      background: var(--rose-gold);
-      color: var(--white);
-      padding: 13px 28px;
-      text-decoration: none;
-      border-radius: 2px;
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      background: var(--rose-gold); color: var(--white);
+      padding: 13px 28px; text-decoration: none; border-radius: 2px;
+      font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
       transition: opacity 0.2s;
     }
-
-    .btn-primary:hover {
-      opacity: 0.86;
-    }
-
+    .btn-primary:hover { opacity: 0.86; }
     .btn-outline {
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      color: var(--cream);
-      padding: 13px 28px;
-      text-decoration: none;
-      border-radius: 2px;
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,0.25); color: var(--cream);
+      padding: 13px 28px; text-decoration: none; border-radius: 2px;
+      font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
       transition: border-color 0.2s;
     }
-
-    .btn-outline:hover {
-      border-color: var(--rose-gold);
-    }
-
+    .btn-outline:hover { border-color: var(--rose-gold); }
     @media (max-width: 768px) {
       .dr-hero {
         grid-template-columns: 1fr;
         min-height: auto;
+        display: flex;
+        flex-direction: column;
       }
-
       .dr-hero-image {
-        height: 55vw;
+        height: 72vw;
+        order: 1;
+        position: relative;
       }
-
+      .dr-hero-image img {
+        object-position: center 15%;
+      }
       .dr-hero-image::after {
-        background: linear-gradient(to top, var(--charcoal) 0%, transparent 60%);
+        background: linear-gradient(to top, var(--charcoal) 0%, rgba(0,0,0,0.1) 55%, transparent 100%);
       }
-
       .dr-hero-content {
-        padding: 40px 6%;
+        order: 2;
+        padding: 32px 6% 48px;
       }
+      .hero-stats { gap: 20px; }
+      .dr-hero-title { font-size: 0.78rem; }
     }
 
     /* ── ABOUT BIO ──────────────────────────────────── */
-    .bio-section {
-      background: var(--white);
-    }
-
+    .bio-section { background: var(--white); }
     .bio-quote {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(1.4rem, 2.5vw, 2rem);
-      font-style: italic;
-      color: var(--charcoal);
-      line-height: 1.5;
-      border-left: 3px solid var(--rose-gold);
-      padding-left: 28px;
+      font-style: italic; color: var(--charcoal); line-height: 1.5;
+      border-left: 3px solid var(--rose-gold); padding-left: 28px;
       margin-bottom: 36px;
     }
-
-    .bio-text {
-      color: var(--muted);
-      font-size: 0.96rem;
-      line-height: 1.9;
-    }
-
-    .bio-text p+p {
-      margin-top: 16px;
-    }
-
-    .qual-list {
-      list-style: none;
-      margin-top: 28px;
-    }
-
+    .bio-text { color: var(--muted); font-size: 0.96rem; line-height: 1.9; }
+    .bio-text p + p { margin-top: 16px; }
+    .qual-list { list-style: none; margin-top: 28px; }
     .qual-list li {
-      padding: 14px 0;
-      border-bottom: 1px solid var(--light-line);
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      font-size: 0.93rem;
-      color: var(--charcoal);
+      padding: 14px 0; border-bottom: 1px solid var(--light-line);
+      display: flex; align-items: flex-start; gap: 14px;
+      font-size: 0.93rem; color: var(--charcoal);
     }
-
-    .qual-list li:last-child {
-      border-bottom: none;
-    }
-
+    .qual-list li:last-child { border-bottom: none; }
     .qual-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--rose-gold);
-      flex-shrink: 0;
-      margin-top: 8px;
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--rose-gold); flex-shrink: 0; margin-top: 8px;
     }
 
     /* ── EXPERIENCE TIMELINE ───────────────────────── */
-    .exp-section {
-      background: var(--blush);
-    }
-
-    .timeline {
-      margin-top: 48px;
-      position: relative;
-    }
-
+    .exp-section { background: var(--blush); }
+    .timeline { margin-top: 48px; position: relative; }
     .timeline::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      background: var(--light-line);
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 1px; background: var(--light-line);
     }
-
-    .timeline-item {
-      padding-left: 36px;
-      padding-bottom: 40px;
-      position: relative;
-    }
-
+    .timeline-item { padding-left: 36px; padding-bottom: 40px; position: relative; }
     .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -4px;
-      top: 6px;
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--rose-gold);
-      border: 2px solid var(--cream);
+      content: ''; position: absolute; left: -4px; top: 6px;
+      width: 9px; height: 9px; border-radius: 50%;
+      background: var(--rose-gold); border: 2px solid var(--cream);
     }
-
     .timeline-period {
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--rose-gold);
-      margin-bottom: 6px;
+      font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--rose-gold); margin-bottom: 6px;
     }
-
     .timeline-role {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.25rem;
-      font-weight: 500;
-      color: var(--charcoal);
-      margin-bottom: 4px;
+      font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 500;
+      color: var(--charcoal); margin-bottom: 4px;
     }
-
     .timeline-org {
-      font-size: 0.82rem;
-      color: var(--muted);
-      font-weight: 500;
-      margin-bottom: 8px;
+      font-size: 0.82rem; color: var(--muted); font-weight: 500; margin-bottom: 8px;
     }
-
-    .timeline-desc {
-      font-size: 0.88rem;
-      color: var(--muted);
-      max-width: 520px;
-    }
+    .timeline-desc { font-size: 0.88rem; color: var(--muted); max-width: 520px; }
 
     /* ── TESTIMONIALS ───────────────────────────────── */
-    .testimonials-section {
-      background: var(--charcoal);
-    }
-
-    .testimonials-section .section-title {
-      color: var(--cream);
-    }
-
-    .testimonials-section .section-label {
-      color: var(--rose-gold);
-    }
-
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 48px;
-    }
-
-    @media (max-width: 768px) {
-      .testimonial-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
+    .testimonials-section { background: var(--charcoal); }
+    .testimonials-section .section-title { color: var(--cream); }
+    .testimonials-section .section-label { color: var(--rose-gold); }
+    .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+    @media (max-width: 768px) { .testimonial-grid { grid-template-columns: 1fr; } }
     .testimonial-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 32px 28px;
-      border-radius: 3px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 32px 28px; border-radius: 3px;
     }
-
-    .testimonial-stars {
-      color: var(--rose-gold);
-      font-size: 0.85rem;
-      margin-bottom: 16px;
-      letter-spacing: 3px;
-    }
-
+    .testimonial-stars { color: var(--rose-gold); font-size: 0.85rem; margin-bottom: 16px; letter-spacing: 3px; }
     .testimonial-text {
       font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 1.08rem;
-      color: rgba(255, 255, 255, 0.8);
-      line-height: 1.7;
-      margin-bottom: 22px;
+      font-style: italic; font-size: 1.08rem; color: rgba(255,255,255,0.8);
+      line-height: 1.7; margin-bottom: 22px;
     }
-
     .testimonial-name {
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--rose-gold);
-      font-weight: 500;
+      font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--rose-gold); font-weight: 500;
     }
-
-    .testimonial-tag {
-      font-size: 0.72rem;
-      color: rgba(255, 255, 255, 0.35);
-      margin-top: 4px;
-    }
+    .testimonial-tag { font-size: 0.72rem; color: rgba(255,255,255,0.35); margin-top: 4px; }
 
     /* ── CONTACT STRIP ──────────────────────────────── */
-    .contact-section {
-      background: var(--white);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0;
-    }
-
-    @media (max-width: 768px) {
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
+    .contact-section { background: var(--white); }
+    .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+    @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
     .contact-item {
       padding: 36px 32px;
       border-right: 1px solid var(--light-line);
     }
-
-    .contact-item:last-child {
-      border-right: none;
-    }
-
-    .contact-icon {
-      font-size: 1.4rem;
-      margin-bottom: 12px;
-    }
-
-    .contact-label {
-      font-size: 0.68rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--rose-gold);
-      margin-bottom: 6px;
-    }
-
-    .contact-value {
-      font-size: 0.9rem;
-      color: var(--charcoal);
-      font-weight: 500;
-    }
-
-    .contact-value a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .contact-value a:hover {
-      color: var(--rose-gold);
-    }
+    .contact-item:last-child { border-right: none; }
+    .contact-icon { font-size: 1.4rem; margin-bottom: 12px; }
+    .contact-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose-gold); margin-bottom: 6px; }
+    .contact-value { font-size: 0.9rem; color: var(--charcoal); font-weight: 500; }
+    .contact-value a { color: inherit; text-decoration: none; }
+    .contact-value a:hover { color: var(--rose-gold); }
 
     /* ════════════════════════════════════════════════
        CLINIC PAGE
@@ -584,1080 +322,720 @@
     .clinic-hero {
       background: var(--charcoal);
       padding: 100px 5% 80px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+      text-align: center; position: relative; overflow: hidden;
     }
-
     .clinic-hero::before {
-      content: 'PURE';
-      position: absolute;
+      content: 'PURE'; position: absolute;
       font-family: 'Cormorant Garamond', serif;
-      font-size: 22vw;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      color: rgba(255, 255, 255, 0.03);
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      white-space: nowrap;
+      font-size: 22vw; font-weight: 600; letter-spacing: 0.05em;
+      color: rgba(255,255,255,0.03); top: 50%; left: 50%;
+      transform: translate(-50%, -50%); pointer-events: none; white-space: nowrap;
     }
-
     .clinic-tagline {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 0.85rem;
-      font-style: italic;
-      letter-spacing: 0.18em;
-      color: rgba(255, 255, 255, 0.4);
-      margin-bottom: 24px;
+      font-size: 0.85rem; font-style: italic; letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.4); margin-bottom: 24px;
     }
-
     .clinic-hero-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 7vw, 6rem);
-      font-weight: 300;
-      letter-spacing: 0.08em;
-      color: var(--cream);
-      line-height: 1;
-      margin-bottom: 8px;
+      font-size: clamp(3rem, 7vw, 6rem); font-weight: 300; letter-spacing: 0.08em;
+      color: var(--cream); line-height: 1; margin-bottom: 8px;
     }
-
-    .clinic-hero-title strong {
-      font-weight: 600;
-    }
-
+    .clinic-hero-title strong { font-weight: 600; }
     .clinic-subtitle {
-      font-size: 0.8rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--rose-gold);
-      margin-bottom: 44px;
+      font-size: 0.8rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--rose-gold); margin-bottom: 44px;
     }
-
     .clinic-hero-desc {
-      max-width: 480px;
-      margin: 0 auto 44px;
-      font-size: 0.95rem;
-      color: rgba(255, 255, 255, 0.5);
-      line-height: 1.9;
+      max-width: 480px; margin: 0 auto 44px;
+      font-size: 0.95rem; color: rgba(255,255,255,0.5); line-height: 1.9;
     }
-
-    .clinic-hero-btns {
-      display: flex;
-      gap: 14px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+    .clinic-hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
     /* SERVICES */
-    .services-section {
-      background: var(--cream);
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 2px;
-      margin-top: 48px;
-    }
-
+    .services-section { background: var(--cream); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 2px; margin-top: 48px; }
     .service-card {
-      background: var(--white);
-      padding: 28px 24px;
+      background: var(--white); padding: 28px 24px;
       transition: background 0.2s;
     }
-
-    .service-card:hover {
-      background: var(--blush);
-    }
-
+    .service-card:hover { background: var(--blush); }
     .service-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      font-weight: 300;
-      color: var(--light-line);
-      display: block;
-      margin-bottom: 10px;
+      font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300;
+      color: var(--light-line); display: block; margin-bottom: 10px;
     }
-
     .service-name {
-      font-size: 0.88rem;
-      font-weight: 500;
-      color: var(--charcoal);
-      line-height: 1.4;
-      margin-bottom: 8px;
+      font-size: 0.88rem; font-weight: 500; color: var(--charcoal);
+      line-height: 1.4; margin-bottom: 8px;
     }
-
-    .service-desc {
-      font-size: 0.78rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
+    .service-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.6; }
 
     /* WHY PURE */
-    .why-section {
-      background: var(--blush);
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 56px;
-      align-items: center;
-    }
-
-    @media (max-width: 768px) {
-      .why-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .why-features {
-      margin-top: 32px;
-    }
-
+    .why-section { background: var(--blush); }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    @media (max-width: 768px) { .why-grid { grid-template-columns: 1fr; } }
+    .why-features { margin-top: 32px; }
     .why-feature {
-      display: flex;
-      gap: 20px;
-      padding: 20px 0;
+      display: flex; gap: 20px; padding: 20px 0;
       border-bottom: 1px solid var(--light-line);
     }
-
-    .why-feature:last-child {
-      border-bottom: none;
-    }
-
+    .why-feature:last-child { border-bottom: none; }
     .why-feature-icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: var(--charcoal);
-      color: var(--rose-gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-      flex-shrink: 0;
+      width: 38px; height: 38px; border-radius: 50%;
+      background: var(--charcoal); color: var(--rose-gold);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
     }
-
-    .why-feature-title {
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .why-feature-desc {
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
-
+    .why-feature-title { font-size: 0.9rem; font-weight: 600; margin-bottom: 4px; }
+    .why-feature-desc { font-size: 0.82rem; color: var(--muted); }
     .why-image-wrap {
-      position: relative;
-      border-radius: 3px;
-      overflow: hidden;
+      position: relative; border-radius: 3px; overflow: hidden;
       height: 500px;
     }
-
-    .why-image-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
+    .why-image-wrap img { width: 100%; height: 100%; object-fit: cover; }
     .why-image-badge {
-      position: absolute;
-      bottom: 24px;
-      left: 24px;
-      background: var(--charcoal);
-      color: var(--cream);
-      padding: 16px 22px;
-      border-radius: 2px;
+      position: absolute; bottom: 24px; left: 24px;
+      background: var(--charcoal); color: var(--cream);
+      padding: 16px 22px; border-radius: 2px;
     }
-
     .why-image-badge strong {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem;
-      font-weight: 500;
-      display: block;
-      color: var(--rose-gold);
+      font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 500;
+      display: block; color: var(--rose-gold);
     }
-
-    .why-image-badge span {
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.5);
-    }
+    .why-image-badge span { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
 
     /* CLINIC TESTIMONIALS LIGHT */
     .clinic-testimonials-light {
-      background: var(--blush);
-      padding: 80px 5%;
+      background: var(--blush); padding: 80px 5%;
     }
-
     .testimonial-grid-light {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 48px;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px;
     }
-
-    @media (max-width: 768px) {
-      .testimonial-grid-light {
-        grid-template-columns: 1fr;
-      }
-    }
-
+    @media (max-width: 768px) { .testimonial-grid-light { grid-template-columns: 1fr; } }
     .testimonial-card-light {
       background: var(--white);
       border: 1px solid var(--light-line);
-      padding: 32px 28px;
-      border-radius: 3px;
+      padding: 32px 28px; border-radius: 3px;
       transition: border-color 0.2s;
     }
-
-    .testimonial-card-light:hover {
-      border-color: var(--rose-gold);
-    }
-
-    .testimonial-stars-light {
-      color: var(--rose-gold);
-      font-size: 0.85rem;
-      margin-bottom: 16px;
-      letter-spacing: 3px;
-    }
-
+    .testimonial-card-light:hover { border-color: var(--rose-gold); }
+    .testimonial-stars-light { color: var(--rose-gold); font-size: 0.85rem; margin-bottom: 16px; letter-spacing: 3px; }
     .testimonial-text-light {
       font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 1.08rem;
-      color: var(--charcoal);
-      line-height: 1.7;
-      margin-bottom: 22px;
+      font-style: italic; font-size: 1.08rem; color: var(--charcoal);
+      line-height: 1.7; margin-bottom: 22px;
     }
-
     .testimonial-name-light {
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--rose-gold);
-      font-weight: 600;
+      font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--rose-gold); font-weight: 600;
     }
-
-    .testimonial-tag-light {
-      font-size: 0.72rem;
-      color: var(--muted);
-      margin-top: 4px;
-    }
+    .testimonial-tag-light { font-size: 0.72rem; color: var(--muted); margin-top: 4px; }
 
     /* WHATSAPP STRIP */
     .whatsapp-strip {
-      background: #075e54;
-      padding: 28px 5%;
+      background: #075e54; padding: 28px 5%;
     }
-
     .whatsapp-strip-inner {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      flex-wrap: wrap;
+      display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
     }
-
-    .whatsapp-icon {
-      font-size: 2.2rem;
-      flex-shrink: 0;
-    }
-
+    .whatsapp-icon { font-size: 2.2rem; flex-shrink: 0; }
     .whatsapp-label {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 3px;
+      font-size: 0.95rem; font-weight: 600; color: #fff; margin-bottom: 3px;
     }
-
-    .whatsapp-sub {
-      font-size: 0.78rem;
-      color: rgba(255, 255, 255, 0.6);
-    }
-
-    .whatsapp-actions {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-left: auto;
-      flex-wrap: wrap;
-    }
-
+    .whatsapp-sub { font-size: 0.78rem; color: rgba(255,255,255,0.6); }
+    .whatsapp-actions { display: flex; align-items: center; gap: 16px; margin-left: auto; flex-wrap: wrap; }
     .whatsapp-btn {
-      background: #25d366;
-      color: #fff;
-      padding: 11px 24px;
-      border-radius: 2px;
-      text-decoration: none;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: opacity 0.2s;
-      white-space: nowrap;
+      background: #25d366; color: #fff;
+      padding: 11px 24px; border-radius: 2px; text-decoration: none;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      transition: opacity 0.2s; white-space: nowrap;
     }
-
-    .whatsapp-btn:hover {
-      opacity: 0.88;
-    }
-
+    .whatsapp-btn:hover { opacity: 0.88; }
     .whatsapp-call {
-      color: rgba(255, 255, 255, 0.75);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-      white-space: nowrap;
+      color: rgba(255,255,255,0.75); text-decoration: none;
+      font-size: 0.85rem; font-weight: 500; white-space: nowrap;
       transition: color 0.2s;
     }
-
-    .whatsapp-call:hover {
-      color: #25d366;
-    }
+    .whatsapp-call:hover { color: #25d366; }
 
     /* 4-col contact grid */
     @media (max-width: 900px) {
-      .contact-grid[style*="repeat(4"] {
-        grid-template-columns: repeat(2, 1fr) !important;
-      }
+      .contact-grid[style*="repeat(4"] { grid-template-columns: repeat(2, 1fr) !important; }
     }
-
     @media (max-width: 520px) {
-      .contact-grid[style*="repeat(4"] {
-        grid-template-columns: 1fr !important;
-      }
-
-      .contact-item {
-        border-right: none !important;
-        border-bottom: 1px solid var(--light-line);
-      }
+      .contact-grid[style*="repeat(4"] { grid-template-columns: 1fr !important; }
+      .contact-item { border-right: none !important; border-bottom: 1px solid var(--light-line); }
     }
 
     /* LOCATION */
-    .location-section {
-      background: var(--charcoal);
-    }
-
-    .location-section .section-title {
-      color: var(--cream);
-    }
-
-    .location-section .section-label {
-      color: var(--rose-gold);
-    }
-
-    .location-section .lead {
-      color: rgba(255, 255, 255, 0.5);
-    }
-
-    .location-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 56px;
-      align-items: start;
-      margin-top: 48px;
-    }
-
-    @media (max-width: 768px) {
-      .location-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
+    .location-section { background: var(--charcoal); }
+    .location-section .section-title { color: var(--cream); }
+    .location-section .section-label { color: var(--rose-gold); }
+    .location-section .lead { color: rgba(255,255,255,0.5); }
+    .location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; margin-top: 48px; }
+    @media (max-width: 768px) { .location-grid { grid-template-columns: 1fr; } }
     .location-detail {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 28px;
+      display: flex; gap: 16px; margin-bottom: 28px;
     }
-
-    .location-detail-icon {
-      color: var(--rose-gold);
-      font-size: 1.2rem;
-      margin-top: 2px;
-      flex-shrink: 0;
-    }
-
-    .location-detail-label {
-      font-size: 0.68rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.35);
-      margin-bottom: 4px;
-    }
-
-    .location-detail-value {
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.75);
-    }
-
+    .location-detail-icon { color: var(--rose-gold); font-size: 1.2rem; margin-top: 2px; flex-shrink: 0; }
+    .location-detail-label { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 4px; }
+    .location-detail-value { font-size: 0.9rem; color: rgba(255,255,255,0.75); }
     .map-placeholder {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 3px;
-      height: 280px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      color: rgba(255, 255, 255, 0.3);
-      font-size: 0.85rem;
-      text-align: center;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 3px; height: 280px; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 12px;
+      color: rgba(255,255,255,0.3); font-size: 0.85rem; text-align: center;
       padding: 20px;
     }
-
-    .map-placeholder .map-icon {
-      font-size: 2rem;
-      margin-bottom: 4px;
-    }
-
+    .map-placeholder .map-icon { font-size: 2rem; margin-bottom: 4px; }
     .map-link {
-      display: inline-block;
-      margin-top: 16px;
-      background: var(--rose-gold);
-      color: var(--white);
-      padding: 12px 26px;
-      border-radius: 2px;
-      text-decoration: none;
-      font-size: 0.76rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      font-weight: 500;
+      display: inline-block; margin-top: 16px;
+      background: var(--rose-gold); color: var(--white);
+      padding: 12px 26px; border-radius: 2px; text-decoration: none;
+      font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;
     }
 
     /* FOOTER */
     footer {
-      background: #111;
-      padding: 36px 5%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
+      background: #111; padding: 36px 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
     }
-
     .footer-brand {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      color: var(--cream);
-      text-transform: uppercase;
+      font-size: 1.1rem; font-weight: 600; letter-spacing: 0.1em;
+      color: var(--cream); text-transform: uppercase;
     }
-
-    .footer-brand span {
-      color: var(--rose-gold);
-    }
-
-    .footer-copy {
-      font-size: 0.73rem;
-      color: rgba(255, 255, 255, 0.3);
-    }
-
-    .footer-socials {
-      display: flex;
-      gap: 16px;
-    }
-
+    .footer-brand span { color: var(--rose-gold); }
+    .footer-copy { font-size: 0.73rem; color: rgba(255,255,255,0.3); }
+    .footer-socials { display: flex; gap: 16px; }
     .footer-social {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(255, 255, 255, 0.4);
-      font-size: 0.8rem;
-      text-decoration: none;
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.12);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.4); font-size: 0.8rem; text-decoration: none;
       transition: border-color 0.2s, color 0.2s;
     }
-
-    .footer-social:hover {
-      border-color: var(--rose-gold);
-      color: var(--rose-gold);
-    }
+    .footer-social:hover { border-color: var(--rose-gold); color: var(--rose-gold); }
 
     /* ── BOOK CTA BANNER ──── */
     .book-banner {
       background: var(--rose-gold);
       padding: 36px 5%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;
     }
-
     .book-banner-text {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.7rem;
-      font-weight: 400;
-      color: var(--white);
-      font-style: italic;
+      font-size: 1.7rem; font-weight: 400; color: var(--white); font-style: italic;
     }
-
     .btn-book-banner {
-      background: var(--white);
-      color: var(--rose-gold);
-      padding: 13px 30px;
-      border-radius: 2px;
-      text-decoration: none;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      transition: opacity 0.2s;
-      white-space: nowrap;
+      background: var(--white); color: var(--rose-gold);
+      padding: 13px 30px; border-radius: 2px; text-decoration: none;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      transition: opacity 0.2s; white-space: nowrap;
     }
-
-    .btn-book-banner:hover {
-      opacity: 0.9;
-    }
+    .btn-book-banner:hover { opacity: 0.9; }
   </style>
 </head>
-
 <body>
 
-  <!-- NAV -->
-  <nav>
+<!-- NAV -->
+<nav>
+  <div class="nav-top-row">
     <a href="#" class="nav-logo"><span>Pure</span> Aesthetic</a>
-    <div class="nav-tabs">
-      <a class="nav-tab active" href="#" onclick="showPage('dr', this)">Dr. Saleha Khadim</a>
-      <a class="nav-tab" href="#" onclick="showPage('clinic', this)">Pure Aesthetic Clinic</a>
-    </div>
     <a class="nav-cta" href="tel:+923009675656">Book Appointment</a>
-  </nav>
+  </div>
+  <div class="nav-tabs">
+    <a class="nav-tab active" href="#" onclick="showPage('dr', this)">Dr. Saleha Khadim</a>
+    <a class="nav-tab" href="#" onclick="showPage('clinic', this)">Pure Aesthetic Clinic</a>
+  </div>
+</nav>
 
-  <!-- ═══════════════════════════════════
+<!-- ═══════════════════════════════════
      DR. SALEHA KHADIM PAGE
 ═══════════════════════════════════ -->
-  <div id="page-dr" class="page active">
+<div id="page-dr" class="page active">
 
-    <!-- HERO -->
-    <div class="dr-hero">
-      <div class="dr-hero-image">
-        <img src="images-2.jpeg" alt="Dr. Saleha Khadim" />
-      </div>
-      <div class="dr-hero-content">
-        <p class="dr-hero-eyebrow">Dentist · Aesthetic Physician · MFDS · CBAM</p>
-        <h1 class="dr-hero-name"><strong>Dr. Saleha</strong><br>Khadim</h1>
-        <p class="dr-hero-title">
-          BDS · Aesthetics Diploma · PG Dermatology Certification<br>
-          Faculty Affiliate, Royal College of Surgeons in Ireland<br>
-          Member, Board of Governors — Sadiq Public School
-        </p>
-        <div class="hero-stats">
-          <div>
-            <span class="hero-stat-num">4+</span>
-            <span class="hero-stat-label">Years Experience</span>
-          </div>
-          <div>
-            <span class="hero-stat-num">94%</span>
-            <span class="hero-stat-label">Patient Satisfaction</span>
-          </div>
-          <div>
-            <span class="hero-stat-num">30+</span>
-            <span class="hero-stat-label">Procedures</span>
-          </div>
-        </div>
-        <div class="hero-btns">
-          <a class="btn-primary" href="tel:+923009675656">📞 Call Now</a>
-          <a class="btn-outline" href="#" onclick="showPage('clinic', document.querySelectorAll('.nav-tab')[1])">View
-            Clinic</a>
-        </div>
-      </div>
+  <!-- HERO -->
+  <div class="dr-hero">
+    <div class="dr-hero-image">
+      <img src="images-2.jpeg" alt="Dr. Saleha Khadim" />
     </div>
-
-    <!-- BIO -->
-    <section class="section bio-section">
-      <div class="grid-2">
+    <div class="dr-hero-content">
+      <p class="dr-hero-eyebrow">Dentist · Aesthetic Physician · MFDS · CBAM</p>
+      <h1 class="dr-hero-name"><strong>Dr. Saleha</strong><br>Khadim</h1>
+      <p class="dr-hero-title">
+        BDS · Aesthetics Diploma · PG Dermatology Certification<br>
+        Faculty Affiliate, Royal College of Surgeons in Ireland<br>
+        Member, Board of Governors — Sadiq Public School
+      </p>
+      <div class="hero-stats">
         <div>
-          <p class="section-label">About</p>
-          <h2 class="section-title">Creating <em>beautiful smiles</em> & enhancing natural beauty</h2>
-          <div class="divider"></div>
-          <div class="bio-text">
-            <blockquote class="bio-quote">"Committed to the best patient care through communication and high-quality
-              service."</blockquote>
-            <p>I am a passionate Dentist and Aesthetic Physician based in Lahore, Pakistan. With a BDS degree in
-              Dentistry and a Postgraduate Certification in Dermatology, I bring a dual expertise that sets me apart —
-              crafting confident smiles while enhancing natural beauty through advanced aesthetics.</p>
-            <p>I am a Faculty Affiliate at the Royal College of Surgeons in Ireland (RCSI), where I share my expertise
-              with aspiring and practising professionals. I also serve as a Member of the Board of Governors at Sadiq
-              Public School Bahawalpur. I hold a Diploma in Aesthetic Medicine from Skin Vision, and I remain committed
-              to staying at the forefront of the latest techniques and technologies in my field.</p>
-          </div>
+          <span class="hero-stat-num">4+</span>
+          <span class="hero-stat-label">Years Experience</span>
         </div>
         <div>
-          <p class="section-label">Qualifications</p>
-          <ul class="qual-list">
-            <li><span class="qual-dot"></span><span><strong>BDS</strong> — Basic Dental Surgery Qualification</span>
-            </li>
-            <li><span class="qual-dot"></span><span><strong>MFDS</strong> — Membership of the Faculty of Dental
-                Surgery</span></li>
-            <li><span class="qual-dot"></span><span><strong>CBAM</strong> — Certified Botox & Aesthetic Medicine</span>
-            </li>
-            <li><span class="qual-dot"></span><span><strong>Diploma in Aesthetic Medicine</strong> — Skin Vision,
-                Lahore</span></li>
-            <li><span class="qual-dot"></span><span><strong>PG Certification in Dermatology</strong></span></li>
-            <li><span class="qual-dot"></span><span><strong>Oral & Maxillofacial Surgery</strong> training</span></li>
-            <li><span class="qual-dot"></span><span><strong>Faculty Affiliate</strong>, Royal College of Surgeons in
-                Ireland (RCSI)</span></li>
-          </ul>
+          <span class="hero-stat-num">94%</span>
+          <span class="hero-stat-label">Patient Satisfaction</span>
         </div>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section class="section exp-section">
-      <p class="section-label">Career</p>
-      <h2 class="section-title">Experience &amp; <em>Affiliations</em></h2>
-      <div class="divider"></div>
-      <div class="timeline">
-        <div class="timeline-item">
-          <p class="timeline-period">Jul 2024 – Present</p>
-          <p class="timeline-role">Founder & Aesthetic Physician</p>
-          <p class="timeline-org">Pure Aesthetic Clinic · Lahore, Pakistan</p>
-          <p class="timeline-desc">Leads full-service aesthetic medicine practice offering injectables, skin
-            rejuvenation, laser treatments, and more.</p>
-        </div>
-        <div class="timeline-item">
-          <p class="timeline-period">Jul 2023 – Present</p>
-          <p class="timeline-role">General Dentist</p>
-          <p class="timeline-org">Lahore Medical & Dental College · On-site</p>
-          <p class="timeline-desc">Clinical practice covering comprehensive dental care including paediatric dentistry
-            and restorative procedures.</p>
-        </div>
-        <div class="timeline-item">
-          <p class="timeline-period">Sep 2023 – Present</p>
-          <p class="timeline-role">Faculty Affiliate</p>
-          <p class="timeline-org">Royal College of Surgeons in Ireland (RCSI) · Remote</p>
-          <p class="timeline-desc">Mentors aspiring dental and aesthetic professionals within one of Ireland's most
-            prestigious surgical institutions.</p>
-        </div>
-        <div class="timeline-item">
-          <p class="timeline-period">Mar 2024 – Present</p>
-          <p class="timeline-role">Member, Board of Governors</p>
-          <p class="timeline-org">Sadiq Public School, Bahawalpur · Part-time</p>
-          <p class="timeline-desc">Contributes academic and professional leadership to institutional governance.</p>
-        </div>
-        <div class="timeline-item">
-          <p class="timeline-period">Jun 2023 – Present</p>
-          <p class="timeline-role">Aesthetic Trainee</p>
-          <p class="timeline-org">Skin Vision Lahore · Part-time / Hybrid</p>
-          <p class="timeline-desc">Advanced training in aesthetic medicine, building specialisation in skin and
-            injectable procedures.</p>
-        </div>
-        <div class="timeline-item">
-          <p class="timeline-period">Feb 2022 – Sep 2023</p>
-          <p class="timeline-role">General Dentist</p>
-          <p class="timeline-org">ALIGNERCO · Remote</p>
-          <p class="timeline-desc">Delivered digital orthodontic consultations, treatment planning, and patient
-            management across Pakistan.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- DR TESTIMONIALS -->
-    <section class="section testimonials-section">
-      <p class="section-label">Patient Stories</p>
-      <h2 class="section-title" style="color:var(--cream)">What patients <em>say</em></h2>
-      <div class="testimonial-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Dr. Saleha is incredibly knowledgeable and warm. My confidence has completely
-            transformed after her treatments."</p>
-          <p class="testimonial-name">Ayesha R.</p>
-          <p class="testimonial-tag">Aesthetic Patient · Lahore</p>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Finally a dentist who truly listens. She explained every step and made me feel
-            completely at ease."</p>
-          <p class="testimonial-name">Maryam K.</p>
-          <p class="testimonial-tag">Dental Patient · Lahore</p>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Professional, gentle, and results speak for themselves. Highly recommend Dr.
-            Saleha for any aesthetic procedure."</p>
-          <p class="testimonial-name">Sana M.</p>
-          <p class="testimonial-tag">Botox & Filler Patient</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section contact-section" style="padding-top:60px;padding-bottom:60px;">
-      <p class="section-label" style="text-align:center;margin-bottom:8px;">Get in Touch</p>
-      <h2 class="section-title" style="text-align:center;margin-bottom:36px;">Reach <em>Dr. Saleha</em></h2>
-      <div class="contact-grid" style="grid-template-columns:repeat(4,1fr);">
-        <div class="contact-item">
-          <div class="contact-icon">📞</div>
-          <p class="contact-label">Phone Call</p>
-          <p class="contact-value"><a href="tel:+923009675656">+92 300 967 5656</a></p>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">💬</div>
-          <p class="contact-label">WhatsApp</p>
-          <p class="contact-value"><a href="https://wa.me/923009675656" target="_blank">Chat on WhatsApp</a></p>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">📸</div>
-          <p class="contact-label">Instagram</p>
-          <p class="contact-value"><a href="https://www.instagram.com/saleha_khadim/" target="_blank">@saleha_khadim</a>
-          </p>
-        </div>
-        <div class="contact-item" style="border-right:none;">
-          <div class="contact-icon">📍</div>
-          <p class="contact-label">Location</p>
-          <p class="contact-value">39 Eden Villas, Model Town Q Block<br>Extension, Lahore, Pakistan</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHATSAPP STICKY BANNER -->
-    <div class="whatsapp-strip">
-      <div class="whatsapp-strip-inner">
-        <span class="whatsapp-icon">💬</span>
         <div>
-          <p class="whatsapp-label">Message Dr. Saleha on WhatsApp</p>
-          <p class="whatsapp-sub">Quick replies · Book appointments · Ask questions</p>
-        </div>
-        <div class="whatsapp-actions">
-          <a class="whatsapp-btn" href="https://wa.me/923009675656" target="_blank">WhatsApp Now</a>
-          <a class="whatsapp-call" href="tel:+923009675656">📞 +92 300 967 5656</a>
+          <span class="hero-stat-num">30+</span>
+          <span class="hero-stat-label">Procedures</span>
         </div>
       </div>
+      <div class="hero-btns">
+        <a class="btn-primary" href="tel:+923009675656">📞 Call Now</a>
+        <a class="btn-outline" href="#" onclick="showPage('clinic', document.querySelectorAll('.nav-tab')[1])">View Clinic</a>
+      </div>
     </div>
+  </div>
 
-    <div class="book-banner">
-      <p class="book-banner-text">Ready for your transformation? Let's talk.</p>
-      <a class="btn-book-banner" href="https://wa.me/923009675656" target="_blank">Book a Consultation</a>
+  <!-- BIO -->
+  <section class="section bio-section">
+    <div class="grid-2">
+      <div>
+        <p class="section-label">About</p>
+        <h2 class="section-title">Creating <em>beautiful smiles</em> & enhancing natural beauty</h2>
+        <div class="divider"></div>
+        <div class="bio-text">
+          <blockquote class="bio-quote">"Committed to the best patient care through communication and high-quality service."</blockquote>
+          <p>I am a passionate Dentist and Aesthetic Physician based in Lahore, Pakistan. With a BDS degree in Dentistry and a Postgraduate Certification in Dermatology, I bring a dual expertise that sets me apart — crafting confident smiles while enhancing natural beauty through advanced aesthetics.</p>
+          <p>I am a Faculty Affiliate at the Royal College of Surgeons in Ireland (RCSI), where I share my expertise with aspiring and practising professionals. I also serve as a Member of the Board of Governors at Sadiq Public School Bahawalpur. I hold a Diploma in Aesthetic Medicine from Skin Vision, and I remain committed to staying at the forefront of the latest techniques and technologies in my field.</p>
+        </div>
+      </div>
+      <div>
+        <p class="section-label">Qualifications</p>
+        <ul class="qual-list">
+          <li><span class="qual-dot"></span><span><strong>BDS</strong> — Basic Dental Surgery Qualification</span></li>
+          <li><span class="qual-dot"></span><span><strong>MFDS</strong> — Membership of the Faculty of Dental Surgery</span></li>
+          <li><span class="qual-dot"></span><span><strong>CBAM</strong> — Certified Botox & Aesthetic Medicine</span></li>
+          <li><span class="qual-dot"></span><span><strong>Diploma in Aesthetic Medicine</strong> — Skin Vision, Lahore</span></li>
+          <li><span class="qual-dot"></span><span><strong>PG Certification in Dermatology</strong></span></li>
+          <li><span class="qual-dot"></span><span><strong>Oral & Maxillofacial Surgery</strong> training</span></li>
+          <li><span class="qual-dot"></span><span><strong>Faculty Affiliate</strong>, Royal College of Surgeons in Ireland (RCSI)</span></li>
+        </ul>
+      </div>
     </div>
+  </section>
 
-  </div><!-- /page-dr -->
+  <!-- EXPERIENCE -->
+  <section class="section exp-section">
+    <p class="section-label">Career</p>
+    <h2 class="section-title">Experience &amp; <em>Affiliations</em></h2>
+    <div class="divider"></div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <p class="timeline-period">Jul 2024 – Present</p>
+        <p class="timeline-role">Founder & Aesthetic Physician</p>
+        <p class="timeline-org">Pure Aesthetic Clinic · Lahore, Pakistan</p>
+        <p class="timeline-desc">Leads full-service aesthetic medicine practice offering injectables, skin rejuvenation, laser treatments, and more.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-period">Jul 2023 – Present</p>
+        <p class="timeline-role">General Dentist</p>
+        <p class="timeline-org">Lahore Medical & Dental College · On-site</p>
+        <p class="timeline-desc">Clinical practice covering comprehensive dental care including paediatric dentistry and restorative procedures.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-period">Sep 2023 – Present</p>
+        <p class="timeline-role">Faculty Affiliate</p>
+        <p class="timeline-org">Royal College of Surgeons in Ireland (RCSI) · Remote</p>
+        <p class="timeline-desc">Mentors aspiring dental and aesthetic professionals within one of Ireland's most prestigious surgical institutions.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-period">Mar 2024 – Present</p>
+        <p class="timeline-role">Member, Board of Governors</p>
+        <p class="timeline-org">Sadiq Public School, Bahawalpur · Part-time</p>
+        <p class="timeline-desc">Contributes academic and professional leadership to institutional governance.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-period">Jun 2023 – Present</p>
+        <p class="timeline-role">Aesthetic Trainee</p>
+        <p class="timeline-org">Skin Vision Lahore · Part-time / Hybrid</p>
+        <p class="timeline-desc">Advanced training in aesthetic medicine, building specialisation in skin and injectable procedures.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-period">Feb 2022 – Sep 2023</p>
+        <p class="timeline-role">General Dentist</p>
+        <p class="timeline-org">ALIGNERCO · Remote</p>
+        <p class="timeline-desc">Delivered digital orthodontic consultations, treatment planning, and patient management across Pakistan.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DR TESTIMONIALS -->
+  <section class="section testimonials-section">
+    <p class="section-label">Patient Stories</p>
+    <h2 class="section-title" style="color:var(--cream)">What patients <em>say</em></h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Dr. Saleha is incredibly knowledgeable and warm. My confidence has completely transformed after her treatments."</p>
+        <p class="testimonial-name">Ayesha R.</p>
+        <p class="testimonial-tag">Aesthetic Patient · Lahore</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Finally a dentist who truly listens. She explained every step and made me feel completely at ease."</p>
+        <p class="testimonial-name">Maryam K.</p>
+        <p class="testimonial-tag">Dental Patient · Lahore</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Professional, gentle, and results speak for themselves. Highly recommend Dr. Saleha for any aesthetic procedure."</p>
+        <p class="testimonial-name">Sana M.</p>
+        <p class="testimonial-tag">Botox & Filler Patient</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact-section" style="padding-top:60px;padding-bottom:60px;">
+    <p class="section-label" style="text-align:center;margin-bottom:8px;">Get in Touch</p>
+    <h2 class="section-title" style="text-align:center;margin-bottom:36px;">Reach <em>Dr. Saleha</em></h2>
+    <div class="contact-grid" style="grid-template-columns:repeat(4,1fr);">
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <p class="contact-label">Phone Call</p>
+        <p class="contact-value"><a href="tel:+923009675656">+92 300 967 5656</a></p>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">💬</div>
+        <p class="contact-label">WhatsApp</p>
+        <p class="contact-value"><a href="https://wa.me/923009675656" target="_blank">Chat on WhatsApp</a></p>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📸</div>
+        <p class="contact-label">Instagram</p>
+        <p class="contact-value"><a href="https://www.instagram.com/saleha_khadim/" target="_blank">@saleha_khadim</a></p>
+      </div>
+      <div class="contact-item" style="border-right:none;">
+        <div class="contact-icon">📍</div>
+        <p class="contact-label">Location</p>
+        <p class="contact-value">39 Eden Villas, Model Town Q Block<br>Extension, Lahore, Pakistan</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHATSAPP STICKY BANNER -->
+  <div class="whatsapp-strip">
+    <div class="whatsapp-strip-inner">
+      <span class="whatsapp-icon">💬</span>
+      <div>
+        <p class="whatsapp-label">Message Dr. Saleha on WhatsApp</p>
+        <p class="whatsapp-sub">Quick replies · Book appointments · Ask questions</p>
+      </div>
+      <div class="whatsapp-actions">
+        <a class="whatsapp-btn" href="https://wa.me/923009675656" target="_blank">WhatsApp Now</a>
+        <a class="whatsapp-call" href="tel:+923009675656">📞 +92 300 967 5656</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="book-banner">
+    <p class="book-banner-text">Ready for your transformation? Let's talk.</p>
+    <a class="btn-book-banner" href="https://wa.me/923009675656" target="_blank">Book a Consultation</a>
+  </div>
+
+</div><!-- /page-dr -->
 
 
-  <!-- ═══════════════════════════════════
+<!-- ═══════════════════════════════════
      PURE AESTHETIC CLINIC PAGE
 ═══════════════════════════════════ -->
-  <div id="page-clinic" class="page">
+<div id="page-clinic" class="page">
 
-    <!-- HERO -->
-    <div class="clinic-hero">
-      <p class="clinic-tagline">Keep your skin looking beautiful</p>
-      <h1 class="clinic-hero-title"><strong>Pure</strong></h1>
-      <p class="clinic-subtitle">Aesthetic Clinic · Lahore</p>
-      <p class="clinic-hero-desc">
-        A premium destination for advanced skin care, injectables, and transformative aesthetic procedures — led by
-        certified expertise.
-      </p>
-      <div class="clinic-hero-btns">
-        <a class="btn-primary" href="tel:+923009675656">Book Now</a>
-        <a class="btn-outline" href="#clinic-services"
-          onclick="document.getElementById('clinic-services').scrollIntoView({behavior:'smooth'})">Our Services</a>
+  <!-- HERO -->
+  <div class="clinic-hero">
+    <p class="clinic-tagline">Keep your skin looking beautiful</p>
+    <h1 class="clinic-hero-title"><strong>Pure</strong></h1>
+    <p class="clinic-subtitle">Aesthetic Clinic · Lahore</p>
+    <p class="clinic-hero-desc">
+      A premium destination for advanced skin care, injectables, and transformative aesthetic procedures — led by certified expertise.
+    </p>
+    <div class="clinic-hero-btns">
+      <a class="btn-primary" href="tel:+923009675656">Book Now</a>
+      <a class="btn-outline" href="#clinic-services" onclick="document.getElementById('clinic-services').scrollIntoView({behavior:'smooth'})">Our Services</a>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="section services-section" id="clinic-services">
+    <p class="section-label">What We Offer</p>
+    <h2 class="section-title">Treatments &amp; <em>Procedures</em></h2>
+    <div class="divider"></div>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-num">01</span>
+        <p class="service-name">Hydrafacial</p>
+        <p class="service-desc">Deep cleanse, exfoliate, extract and hydrate in one session.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num">02</span>
+        <p class="service-name">Hollywood Facial</p>
+        <p class="service-desc">Laser carbon peel for radiant, glass-skin glow.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num">03</span>
+        <p class="service-name">Vampire Facial (PRP)</p>
+        <p class="service-desc">Platelet-rich plasma therapy for skin rejuvenation.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num">04</span>
+        <p class="service-name">Skin Rejuvenation Facial</p>
+        <p class="service-desc">Targeted treatment to restore radiance and skin texture.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num">05</span>
+        <p class="service-name">Laser Hair Removal</p>
+        <p class="service-desc">Permanent reduction with state-of-the-art laser systems.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num">06</span>
+        <p class="service-name">Tattoo Removal</p>
+        <p class="service-desc">Safe, gradual laser-based tattoo fading and removal.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num">07</span>
+        <p class="service-name">Lip Lightening</p>
+        <p class="service-desc">Restore natural lip tone through advanced brightening protocols.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num">08</span>
+        <p class="service-name">Botox & Anti-Wrinkle</p>
+        <p class="service-desc">Precise injectable treatments for natural, refreshed results.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num">09</span>
+        <p class="service-name">Slimming Drips</p>
+        <p class="service-desc">IV infusion therapies supporting weight management goals.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num">10</span>
+        <p class="service-name">Meso Therapy</p>
+        <p class="service-desc">Microinjections to revitalise skin and promote hair growth.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num">11</span>
+        <p class="service-name">Mole / Tags / Warts Removal</p>
+        <p class="service-desc">Safe, precise removal of benign skin lesions.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num">12</span>
+        <p class="service-name">Acne & Scar Treatment</p>
+        <p class="service-desc">Comprehensive protocols for clearer, smoother skin.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num">13</span>
+        <p class="service-name">Whitening Drips</p>
+        <p class="service-desc">Glutathione-based IV infusions for an even, luminous tone.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num">14</span>
+        <p class="service-name">Melasma Treatment</p>
+        <p class="service-desc">Targeted therapy for pigmentation and dark spots.</p>
       </div>
     </div>
+  </section>
 
-    <!-- SERVICES -->
-    <section class="section services-section" id="clinic-services">
-      <p class="section-label">What We Offer</p>
-      <h2 class="section-title">Treatments &amp; <em>Procedures</em></h2>
-      <div class="divider"></div>
-      <div class="services-grid">
-        <div class="service-card">
-          <span class="service-num">01</span>
-          <p class="service-name">Hydrafacial</p>
-          <p class="service-desc">Deep cleanse, exfoliate, extract and hydrate in one session.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-num">02</span>
-          <p class="service-name">Hollywood Facial</p>
-          <p class="service-desc">Laser carbon peel for radiant, glass-skin glow.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-num">03</span>
-          <p class="service-name">Vampire Facial (PRP)</p>
-          <p class="service-desc">Platelet-rich plasma therapy for skin rejuvenation.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-num">04</span>
-          <p class="service-name">Skin Rejuvenation Facial</p>
-          <p class="service-desc">Targeted treatment to restore radiance and skin texture.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-num">05</span>
-          <p class="service-name">Laser Hair Removal</p>
-          <p class="service-desc">Permanent reduction with state-of-the-art laser systems.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-num">06</span>
-          <p class="service-name">Tattoo Removal</p>
-          <p class="service-desc">Safe, gradual laser-based tattoo fading and removal.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-num">07</span>
-          <p class="service-name">Lip Lightening</p>
-          <p class="service-desc">Restore natural lip tone through advanced brightening protocols.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-num">08</span>
-          <p class="service-name">Botox & Anti-Wrinkle</p>
-          <p class="service-desc">Precise injectable treatments for natural, refreshed results.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-num">09</span>
-          <p class="service-name">Slimming Drips</p>
-          <p class="service-desc">IV infusion therapies supporting weight management goals.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-num">10</span>
-          <p class="service-name">Meso Therapy</p>
-          <p class="service-desc">Microinjections to revitalise skin and promote hair growth.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-num">11</span>
-          <p class="service-name">Mole / Tags / Warts Removal</p>
-          <p class="service-desc">Safe, precise removal of benign skin lesions.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-num">12</span>
-          <p class="service-name">Acne & Scar Treatment</p>
-          <p class="service-desc">Comprehensive protocols for clearer, smoother skin.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-num">13</span>
-          <p class="service-name">Whitening Drips</p>
-          <p class="service-desc">Glutathione-based IV infusions for an even, luminous tone.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-num">14</span>
-          <p class="service-name">Melasma Treatment</p>
-          <p class="service-desc">Targeted therapy for pigmentation and dark spots.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHY PURE -->
-    <section class="section why-section">
-      <div class="why-grid">
-        <div>
-          <p class="section-label">Why Pure</p>
-          <h2 class="section-title">Where expertise <em>meets</em> elegance</h2>
-          <div class="divider"></div>
-          <p class="lead">Pure Aesthetic Clinic is built on the belief that every patient deserves premium, personalised
-            care. Under the direction of Dr. Saleha Khadim, every treatment is guided by clinical precision and a
-            commitment to natural results.</p>
-          <div class="why-features">
-            <div class="why-feature">
-              <div class="why-feature-icon">✦</div>
-              <div>
-                <p class="why-feature-title">RCSI-Affiliated Expertise</p>
-                <p class="why-feature-desc">Led by a Faculty Affiliate of the Royal College of Surgeons in Ireland.</p>
-              </div>
-            </div>
-            <div class="why-feature">
-              <div class="why-feature-icon">✦</div>
-              <div>
-                <p class="why-feature-title">Advanced Technology</p>
-                <p class="why-feature-desc">State-of-the-art laser, injectable, and skin care equipment.</p>
-              </div>
-            </div>
-            <div class="why-feature">
-              <div class="why-feature-icon">✦</div>
-              <div>
-                <p class="why-feature-title">Personalised Approach</p>
-                <p class="why-feature-desc">Every treatment plan is tailored to your unique skin goals.</p>
-              </div>
-            </div>
-            <div class="why-feature">
-              <div class="why-feature-icon">✦</div>
-              <div>
-                <p class="why-feature-title">94% Patient Satisfaction</p>
-                <p class="why-feature-desc">Trusted by patients across Lahore for consistent, beautiful results.</p>
-              </div>
+  <!-- WHY PURE -->
+  <section class="section why-section">
+    <div class="why-grid">
+      <div>
+        <p class="section-label">Why Pure</p>
+        <h2 class="section-title">Where expertise <em>meets</em> elegance</h2>
+        <div class="divider"></div>
+        <p class="lead">Pure Aesthetic Clinic is built on the belief that every patient deserves premium, personalised care. Under the direction of Dr. Saleha Khadim, every treatment is guided by clinical precision and a commitment to natural results.</p>
+        <div class="why-features">
+          <div class="why-feature">
+            <div class="why-feature-icon">✦</div>
+            <div>
+              <p class="why-feature-title">RCSI-Affiliated Expertise</p>
+              <p class="why-feature-desc">Led by a Faculty Affiliate of the Royal College of Surgeons in Ireland.</p>
             </div>
           </div>
-        </div>
-        <div>
-          <div class="why-image-wrap">
-            <img src="images.jpeg" alt="Pure Aesthetic Clinic" />
-            <div class="why-image-badge">
-              <strong>94%</strong>
-              <span>Satisfied Patients</span>
+          <div class="why-feature">
+            <div class="why-feature-icon">✦</div>
+            <div>
+              <p class="why-feature-title">Advanced Technology</p>
+              <p class="why-feature-desc">State-of-the-art laser, injectable, and skin care equipment.</p>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-feature-icon">✦</div>
+            <div>
+              <p class="why-feature-title">Personalised Approach</p>
+              <p class="why-feature-desc">Every treatment plan is tailored to your unique skin goals.</p>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-feature-icon">✦</div>
+            <div>
+              <p class="why-feature-title">94% Patient Satisfaction</p>
+              <p class="why-feature-desc">Trusted by patients across Lahore for consistent, beautiful results.</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- CLINIC TESTIMONIALS -->
-    <section class="section clinic-testimonials-light">
-      <p class="section-label">Client Reviews</p>
-      <h2 class="section-title">Transformations at <em>Pure</em></h2>
-      <div class="divider"></div>
-      <div class="testimonial-grid-light">
-        <div class="testimonial-card-light">
-          <div class="testimonial-stars-light">★★★★★</div>
-          <p class="testimonial-text-light">"My skin has never looked this good. After three Hydrafacial sessions at
-            Pure, my pores are invisible and the glow is unreal. I get compliments every day."</p>
-          <p class="testimonial-name-light">Fatima S.</p>
-          <p class="testimonial-tag-light">Hydrafacial · 3 Sessions</p>
-        </div>
-        <div class="testimonial-card-light">
-          <div class="testimonial-stars-light">★★★★★</div>
-          <p class="testimonial-text-light">"I had stubborn melasma for years and nothing worked. Pure Aesthetic
-            Clinic's targeted treatment cleared it within weeks. Life-changing."</p>
-          <p class="testimonial-name-light">Hiba R.</p>
-          <p class="testimonial-tag-light">Melasma Treatment · Lahore</p>
-        </div>
-        <div class="testimonial-card-light">
-          <div class="testimonial-stars-light">★★★★★</div>
-          <p class="testimonial-text-light">"The laser hair removal at Pure is the best I've experienced. Painless,
-            effective, and I only needed six sessions for permanent results."</p>
-          <p class="testimonial-name-light">Zara H.</p>
-          <p class="testimonial-tag-light">Laser Hair Removal</p>
-        </div>
-        <div class="testimonial-card-light">
-          <div class="testimonial-stars-light">★★★★★</div>
-          <p class="testimonial-text-light">"I finally got the lip filler I'd been wanting for years. Dr. Saleha was so
-            precise — the results look completely natural and beautiful."</p>
-          <p class="testimonial-name-light">Nadia A.</p>
-          <p class="testimonial-tag-light">Lip Filler · Injectable</p>
-        </div>
-        <div class="testimonial-card-light">
-          <div class="testimonial-stars-light">★★★★★</div>
-          <p class="testimonial-text-light">"The Hollywood Facial gave me a red-carpet glow I didn't think was possible.
-            The clinic itself is stunning — so clean and luxurious."</p>
-          <p class="testimonial-name-light">Maham T.</p>
-          <p class="testimonial-tag-light">Hollywood Facial</p>
-        </div>
-        <div class="testimonial-card-light">
-          <div class="testimonial-stars-light">★★★★★</div>
-          <p class="testimonial-text-light">"After my acne left scars I was embarrassed about for years, Pure's
-            treatment has genuinely given me my confidence back. Cannot thank them enough."</p>
-          <p class="testimonial-name-light">Sara M.</p>
-          <p class="testimonial-tag-light">Acne & Scar Treatment</p>
+      <div>
+        <div class="why-image-wrap">
+          <img src="images.jpeg" alt="Pure Aesthetic Clinic" />
+          <div class="why-image-badge">
+            <strong>94%</strong>
+            <span>Satisfied Patients</span>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- LOCATION -->
-    <section class="section location-section">
-      <div class="location-grid">
-        <div>
-          <p class="section-label">Find Us</p>
-          <h2 class="section-title" style="color:var(--cream)">Visit Pure <em>Aesthetic</em></h2>
-          <div class="divider"></div>
-          <div class="location-detail">
-            <span class="location-detail-icon">📍</span>
-            <div>
-              <p class="location-detail-label">Address</p>
-              <p class="location-detail-value">39 Eden Villas, Model Town Q Block Extension<br>Lahore, Punjab, Pakistan
-              </p>
-            </div>
+  <!-- CLINIC TESTIMONIALS -->
+  <section class="section clinic-testimonials-light">
+    <p class="section-label">Client Reviews</p>
+    <h2 class="section-title">Transformations at <em>Pure</em></h2>
+    <div class="divider"></div>
+    <div class="testimonial-grid-light">
+      <div class="testimonial-card-light">
+        <div class="testimonial-stars-light">★★★★★</div>
+        <p class="testimonial-text-light">"My skin has never looked this good. After three Hydrafacial sessions at Pure, my pores are invisible and the glow is unreal. I get compliments every day."</p>
+        <p class="testimonial-name-light">Fatima S.</p>
+        <p class="testimonial-tag-light">Hydrafacial · 3 Sessions</p>
+      </div>
+      <div class="testimonial-card-light">
+        <div class="testimonial-stars-light">★★★★★</div>
+        <p class="testimonial-text-light">"I had stubborn melasma for years and nothing worked. Pure Aesthetic Clinic's targeted treatment cleared it within weeks. Life-changing."</p>
+        <p class="testimonial-name-light">Hiba R.</p>
+        <p class="testimonial-tag-light">Melasma Treatment · Lahore</p>
+      </div>
+      <div class="testimonial-card-light">
+        <div class="testimonial-stars-light">★★★★★</div>
+        <p class="testimonial-text-light">"The laser hair removal at Pure is the best I've experienced. Painless, effective, and I only needed six sessions for permanent results."</p>
+        <p class="testimonial-name-light">Zara H.</p>
+        <p class="testimonial-tag-light">Laser Hair Removal</p>
+      </div>
+      <div class="testimonial-card-light">
+        <div class="testimonial-stars-light">★★★★★</div>
+        <p class="testimonial-text-light">"I finally got the lip filler I'd been wanting for years. Dr. Saleha was so precise — the results look completely natural and beautiful."</p>
+        <p class="testimonial-name-light">Nadia A.</p>
+        <p class="testimonial-tag-light">Lip Filler · Injectable</p>
+      </div>
+      <div class="testimonial-card-light">
+        <div class="testimonial-stars-light">★★★★★</div>
+        <p class="testimonial-text-light">"The Hollywood Facial gave me a red-carpet glow I didn't think was possible. The clinic itself is stunning — so clean and luxurious."</p>
+        <p class="testimonial-name-light">Maham T.</p>
+        <p class="testimonial-tag-light">Hollywood Facial</p>
+      </div>
+      <div class="testimonial-card-light">
+        <div class="testimonial-stars-light">★★★★★</div>
+        <p class="testimonial-text-light">"After my acne left scars I was embarrassed about for years, Pure's treatment has genuinely given me my confidence back. Cannot thank them enough."</p>
+        <p class="testimonial-name-light">Sara M.</p>
+        <p class="testimonial-tag-light">Acne & Scar Treatment</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="section location-section">
+    <div class="location-grid">
+      <div>
+        <p class="section-label">Find Us</p>
+        <h2 class="section-title" style="color:var(--cream)">Visit Pure <em>Aesthetic</em></h2>
+        <div class="divider"></div>
+        <div class="location-detail">
+          <span class="location-detail-icon">📍</span>
+          <div>
+            <p class="location-detail-label">Address</p>
+            <p class="location-detail-value">39 Eden Villas, Model Town Q Block Extension<br>Lahore, Punjab, Pakistan</p>
           </div>
-          <div class="location-detail">
-            <span class="location-detail-icon">📞</span>
-            <div>
-              <p class="location-detail-label">Phone</p>
-              <p class="location-detail-value"><a href="tel:+923009675656"
-                  style="color:rgba(255,255,255,0.75);text-decoration:none;">+92 300 967 5656</a></p>
-            </div>
+        </div>
+        <div class="location-detail">
+          <span class="location-detail-icon">📞</span>
+          <div>
+            <p class="location-detail-label">Phone</p>
+            <p class="location-detail-value"><a href="tel:+923009675656" style="color:rgba(255,255,255,0.75);text-decoration:none;">+92 300 967 5656</a></p>
           </div>
-          <div class="location-detail">
-            <span class="location-detail-icon">📸</span>
-            <div>
-              <p class="location-detail-label">Instagram</p>
-              <p class="location-detail-value"><a href="https://www.instagram.com/drsalehakhadim" target="_blank"
-                  style="color:rgba(255,255,255,0.75);text-decoration:none;">@drsalehakhadim</a></p>
-            </div>
+        </div>
+        <div class="location-detail">
+          <span class="location-detail-icon">📸</span>
+          <div>
+            <p class="location-detail-label">Instagram</p>
+            <p class="location-detail-value"><a href="https://www.instagram.com/drsalehakhadim" target="_blank" style="color:rgba(255,255,255,0.75);text-decoration:none;">@drsalehakhadim</a></p>
           </div>
-          <!-- <div class="location-detail">
-            <span class="location-detail-icon">💬</span>
-            <div>
+        </div>
+        <div class="location-detail">
+          <span class="location-detail-icon">💬</span>
+          <div>
             <p class="location-detail-label">WhatsApp</p>
             <p class="location-detail-value"><a href="https://wa.me/923009675656" target="_blank" style="color:rgba(255,255,255,0.75);text-decoration:none;">Chat with us on WhatsApp</a></p>
           </div>
-        </div> -->
-          <div class="location-detail">
-            <span class="location-detail-icon">📘</span>
-            <div>
-              <p class="location-detail-label">Facebook</p>
-              <p class="location-detail-value" style="color:rgba(255,255,255,0.75);">Pure Aesthetic Clinic</p>
-            </div>
-          </div>
-          <a class="map-link" href="https://maps.google.com/?q=39+Eden+Villas+Model+Town+Lahore" target="_blank">Open in
-            Google Maps</a>
         </div>
-        <div>
-          <div class="map-placeholder">
-            <div class="map-icon">🗺️</div>
-            <p>39 Eden Villas, Model Town Q Block Extension<br>Lahore, Punjab</p>
-            <a class="map-link" href="https://maps.google.com/?q=39+Eden+Villas+Model+Town+Lahore" target="_blank">Get
-              Directions</a>
+        <div class="location-detail">
+          <span class="location-detail-icon">📘</span>
+          <div>
+            <p class="location-detail-label">Facebook</p>
+            <p class="location-detail-value" style="color:rgba(255,255,255,0.75);">Pure Aesthetic Clinic</p>
           </div>
         </div>
+        <a class="map-link" href="https://maps.google.com/?q=39+Eden+Villas+Model+Town+Lahore" target="_blank">Open in Google Maps</a>
       </div>
-    </section>
-
-    <!-- CLINIC WHATSAPP STRIP -->
-    <div class="whatsapp-strip">
-      <div class="whatsapp-strip-inner">
-        <span class="whatsapp-icon">💬</span>
-        <div>
-          <p class="whatsapp-label">Book your treatment at Pure Aesthetic Clinic</p>
-          <p class="whatsapp-sub">Message us · Ask about services · Reserve your slot</p>
-        </div>
-        <div class="whatsapp-actions">
-          <a class="whatsapp-btn" href="https://wa.me/923009675656" target="_blank">WhatsApp Now</a>
-          <a class="whatsapp-call" href="tel:+923009675656">📞 +92 300 967 5656</a>
+      <div>
+        <div class="map-placeholder">
+          <div class="map-icon">🗺️</div>
+          <p>39 Eden Villas, Model Town Q Block Extension<br>Lahore, Punjab</p>
+          <a class="map-link" href="https://maps.google.com/?q=39+Eden+Villas+Model+Town+Lahore" target="_blank">Get Directions</a>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="book-banner">
-      <p class="book-banner-text">Your best skin is waiting for you.</p>
-      <a class="btn-book-banner" href="https://wa.me/923009675656" target="_blank">Book Your Visit</a>
+  <!-- CLINIC WHATSAPP STRIP -->
+  <div class="whatsapp-strip">
+    <div class="whatsapp-strip-inner">
+      <span class="whatsapp-icon">💬</span>
+      <div>
+        <p class="whatsapp-label">Book your treatment at Pure Aesthetic Clinic</p>
+        <p class="whatsapp-sub">Message us · Ask about services · Reserve your slot</p>
+      </div>
+      <div class="whatsapp-actions">
+        <a class="whatsapp-btn" href="https://wa.me/923009675656" target="_blank">WhatsApp Now</a>
+        <a class="whatsapp-call" href="tel:+923009675656">📞 +92 300 967 5656</a>
+      </div>
     </div>
+  </div>
 
-  </div><!-- /page-clinic -->
+  <div class="book-banner">
+    <p class="book-banner-text">Your best skin is waiting for you.</p>
+    <a class="btn-book-banner" href="https://wa.me/923009675656" target="_blank">Book Your Visit</a>
+  </div>
 
-  <footer>
-    <span class="footer-brand"><span>Pure</span> Aesthetic Clinic</span>
-    <span class="footer-copy">© 2025 Dr. Saleha Khadim. All rights reserved.</span>
-    <div class="footer-socials">
-      <a class="footer-social" href="https://www.instagram.com/saleha_khadim/" target="_blank"
-        title="@saleha_khadim">ig</a>
-      <a class="footer-social" href="https://www.instagram.com/drsalehakhadim" target="_blank"
-        title="@drsalehakhadim">✦</a>
-      <a class="footer-social" href="https://wa.me/923009675656" target="_blank" title="WhatsApp">💬</a>
-    </div>
-  </footer>
+</div><!-- /page-clinic -->
 
-  <script>
-    function showPage(id, tabEl) {
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-      document.getElementById('page-' + id).classList.add('active');
-      if (tabEl) tabEl.classList.add('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      return false;
-    }
-    document.querySelectorAll('.nav-tab').forEach((tab, i) => {
-      tab.addEventListener('click', function (e) {
-        e.preventDefault();
-        const id = i === 0 ? 'dr' : 'clinic';
-        showPage(id, this);
-      });
+<footer>
+  <span class="footer-brand"><span>Pure</span> Aesthetic Clinic</span>
+  <span class="footer-copy">© 2025 Dr. Saleha Khadim. All rights reserved.</span>
+  <div class="footer-socials">
+    <a class="footer-social" href="https://www.instagram.com/saleha_khadim/" target="_blank" title="@saleha_khadim">ig</a>
+    <a class="footer-social" href="https://www.instagram.com/drsalehakhadim" target="_blank" title="@drsalehakhadim">✦</a>
+    <a class="footer-social" href="https://wa.me/923009675656" target="_blank" title="WhatsApp">💬</a>
+  </div>
+</footer>
+
+<script>
+  function showPage(id, tabEl) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('page-' + id).classList.add('active');
+    if (tabEl) tabEl.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return false;
+  }
+  document.querySelectorAll('.nav-tab').forEach((tab, i) => {
+    tab.addEventListener('click', function(e) {
+      e.preventDefault();
+      const id = i === 0 ? 'dr' : 'clinic';
+      showPage(id, this);
     });
-  </script>
+  });
+</script>
 </body>
-
 </html>
